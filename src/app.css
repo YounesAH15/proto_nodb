@@ -1,3 +1,19 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+
+@media (max-width: 1080px) {
+    /* Styles for Motorola Edge 20 Pro and similar devices */
+    h1 {
+        font-size: 200px;
+        text-align: center;
+    }
+
+    section {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+  }
