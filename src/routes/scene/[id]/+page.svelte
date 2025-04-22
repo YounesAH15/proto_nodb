@@ -1,9 +1,9 @@
 <script lang="ts">
     import Chapter1 from '../chapter-1.svelte';
     import Chapter2 from '../chapter-2.svelte';
-    import { page } from '$app/state';
+    import { page } from '$app/stores';
   
-    $: scene = page.params.id;
+    $: scene = $page.params.id;
 </script>
   
   {#if scene === 'chapter-1'}
