@@ -1,6 +1,6 @@
 <!-- src/lib/components/ExplainerVideo.svelte -->
 <!-- svelte-ignore element_invalid_self_closing_tag -->
-
+<!-- 
 <script lang="ts">
     // import myVideo from '$lib/assets/my-video.mp4';
     import myVideo from '$lib/assets/videos/chess_anime_player.mp4';
@@ -17,4 +17,4 @@
   src={myVideo}
 >
   Your browser does not support the video tag.
-</video>
+</video> -->
