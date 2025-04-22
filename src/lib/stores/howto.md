@@ -1,15 +1,12 @@
 # HOW TO USE Scene Store
 
 import { currentScene } from '$lib/stores/scene-store';
-
 currentScene.set('chapter-2');
 
 # HOW TO USE Game Store
 
 How to Use in a Svelte Component
-svelte
-Copier
-Modifier
+<!-- svelte Copier Modifier -->
 <script lang="ts">
   import { gameStore } from '$lib/stores/game-store';
   import { get } from 'svelte/store';
