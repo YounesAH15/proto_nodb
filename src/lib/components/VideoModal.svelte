@@ -20,7 +20,7 @@
 <svelte:window on:keydown={handleKeydown} />
   {#if open}
     <div transition:fade class="fixed inset-0 bg-opacity-60 backdrop-blur-sm flex items-center justify-center z-50">
-      <div class="relative flex-col justify-around w-fit h-fit max-w-3xl mx-4">
+      <div class="relative flex-col justify-around w-fit h-fit max-w-3xl mx-4 p-15">
         <button
           class="absolute top-2 right-2"
           on:click={onClose}
