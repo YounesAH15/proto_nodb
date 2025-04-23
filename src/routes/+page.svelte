@@ -25,7 +25,7 @@
     </div>
     <section>
         <h1>Ready to Journey ? </h1>
-        <button on:click={()=>{newGame();location.replace("/scene/")}} class="m-auto mt-8 p-4 rounded-2xl bg-lime-500">
+        <button on:click={newGame} class="m-auto mt-8 p-4 rounded-2xl bg-lime-500">
             START
         </button>
     </section>
