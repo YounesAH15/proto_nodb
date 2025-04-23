@@ -2,6 +2,7 @@
 	// import ExplainerVideo from "../lib/components/ExplainerVideo.svelte";
 	import VideoModal from "../lib/components/VideoModal.svelte";
     import myVideo from '$lib/assets/videos/chess_anime_player.mp4';
+	import { newGame } from "$lib/stores/game-store";
 
     let explainerIsOpen = true
 </script>
@@ -24,7 +25,7 @@
     </div>
     <section>
         <h1>Ready to Journey ? </h1>
-        <button on:click={()=>location.replace("/scene/")} class="m-auto mt-8 p-4 rounded-2xl bg-lime-500">
+        <button on:click={()=>{newGame();location.replace("/scene/")}} class="m-auto mt-8 p-4 rounded-2xl bg-lime-500">
             START
         </button>
     </section>
