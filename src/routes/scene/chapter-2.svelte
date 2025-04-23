@@ -7,24 +7,17 @@ We'll include two choices, both recorded in the choicesMade store. Your choice a
  -->
 
  <script lang="ts">
-    import { gameStore } from '$lib/stores/game-store';
-    import { goto } from '$app/navigation';
+    import { advanceChapter, gameStore, makeChoice } from '$lib/stores/game-store';
   
     let message = '';
     let chosen = false;
   
-    function makeChoice(choice: string) {
-      gameStore.update((state) => ({
-        ...state,
-        choicesMade: {
-          ...state.choicesMade,
-          oath: choice
-        },
-        currentScene: 'chapter-3'
-      }));
+    function Choose(choice: string) {
+      makeChoice("oath",choice)
+
       message = `You chose: ${choice}`;
       chosen = true;
-      setTimeout(() => goto('/scene/chapter-3'), 1500);
+      advanceChapter("chapter-3");
     }
   </script>
   
@@ -39,22 +32,25 @@ We'll include two choices, both recorded in the choicesMade store. Your choice a
     You must decide: swear to protect the child, or leave them to fate.
   </p>
   
-  <div class="flex gap-4">
+  <div class="flex gap-4 w-full justify-around">
+
     <button
-      on:click={() => makeChoice('protect')}
+      on:click={() => Choose('leave')}
+      class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded"
+      disabled={chosen}
+    >
+      Leave them
+    </button>
+
+    <button
+      on:click={() => Choose('protect')}
       class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded"
       disabled={chosen}
     >
       Swear to protect
     </button>
   
-    <button
-      on:click={() => makeChoice('leave')}
-      class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded"
-      disabled={chosen}
-    >
-      Leave them
-    </button>
+
   </div>
   
   {#if message}

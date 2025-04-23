@@ -1,6 +1,6 @@
 <script lang="ts">
     import ImmersiveLayout from '$lib/components/ImmersiveLayout.svelte';
-    import { page } from '$app/stores';
+    import { page } from '$app/state';
   
     const titles: any = 
         {
@@ -12,8 +12,8 @@
       'chapter-6': 'The Trial of Honor',
       'chapter-7': 'Rise of the Knight',    
     };
-  
-    $: chapterId = 'chapter-'+$page.params.id;
+    
+    $: chapterId = 'chapter-'+page.params.id;
     $: title = titles[chapterId]
   </script>
   

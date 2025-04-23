@@ -5,46 +5,42 @@
 
     let explainerIsOpen = true
 </script>
-<section>
+<section class="m-auto h-screen flex flex-col justify-evenly text-3xl">
 
-    <h1>
-        🛡️ Concept: "The Path to the Cross"
-    </h1>
-    <h3>
-        Genre: Medieval escape adventure
-        <br>
-        Theme: Honor, transformation, moral dilemmas, cryptic codes, knightly virtues
-        <br>
-        Player Role: A blacksmith’s apprentice (servant) whose fate changes after a mysterious knight’s death...
-    </h3>
+    <div>
+        <h1 class="text-5xl">
+            🛡️ Concept: "The Path to the Cross"
+        </h1>
+    </div>
+
+    <div>
+        <h3>
+            Genre: Medieval escape adventure
+            <br>
+            Theme: Honor, transformation, moral dilemmas, cryptic codes, knightly virtues
+            <br>
+            Player Role: A blacksmith’s apprentice (servant) whose fate changes after a mysterious knight’s death...
+        </h3>
+    </div>
+    <section>
+        <h1>Ready to Journey ? </h1>
+        <button on:click={()=>location.replace("/scene/")} class="m-auto mt-8 p-4 rounded-2xl bg-lime-500">
+            START
+        </button>
+    </section>
+    
 </section>
 
-<section>
-    <!-- Auth forms, lucia or oauth2 using google -->
+<!-- <section>
+    Auth forms, lucia or oauth2 using google
      <h1>AUTH
         THEN
      </h1>
-</section>
+</section> -->
 
-<section>
-    <!-- Just an Explanation For the Game, through a video or a text -->
-     <h1>Explainer</h1>
-    <VideoModal videoSrc={myVideo} open={explainerIsOpen} onClose={()=>{explainerIsOpen=false}}></VideoModal>
-</section>
 
-<section>
-    <h1>Ready to Start ? </h1>
-    <button><a href="/scene/1">START</a></button>
-</section>
-
-<section>
-    <!-- In layout or main Game UI -->
-<!-- 
-    {#if $currentScene === 'chapter-1'}
-    <Chapter1 />
-    {:else if $currentScene === 'chapter-2'}
-    <Chapter2 />
-    {/if}
-     -->
-
-</section>
+<VideoModal 
+    videoSrc={myVideo}
+    open={explainerIsOpen}
+    onClose={()=>{explainerIsOpen = false}}>
+</VideoModal>
