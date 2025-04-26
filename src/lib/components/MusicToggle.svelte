@@ -15,7 +15,7 @@
   });
 </script>
   
-  <button on:click={() => musicEnabled.update((m:Boolean) => !m)} class="bg-amber-950/20 px-2 py-2 rounded flex text-center border-2 border-amber-50">
+  <button on:click={() => musicEnabled.update((m:Boolean) => !m)} class="bg-amber-950/20 px-2 py-2 rounded flex text-center border-2 border-amber-50 h-fit">
     <MusicNoteIcon classes="w-8 h-8" color="black" /> { $musicEnabled ? 'On' :  'Off'  }
   </button>
   

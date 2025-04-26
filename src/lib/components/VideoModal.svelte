@@ -47,7 +47,7 @@
   {/if}
   
 
-  <style>
+  <style lang="css">
     #closeBtn {
         color:red;
     }

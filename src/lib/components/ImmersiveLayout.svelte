@@ -16,22 +16,22 @@
     <!-- <div class="absolute inset-0  z-0"></div> -->
   
     <!-- HUD -->
-    <div class="fixed min-w-full z-100 p-4 flex justify-between items-start">
-      <div>
-        <h1 class="text-xl font-bold mb-2 text-black bg-amber-50 w-fit px-4">{title}</h1>
-        <div class="flex-col bg-amber-950/55 border-2 border-amber-50 p-0">
-          <QuestsPreview />
+    <div class="min-w-full z-10 p-4 flex justify-between items-start top-0">
+      <div class="flex justify-between w-full">
+        <h1 class="text-xl font-bold mb-2 h-fit border-2 border-black text-black bg-amber-50 w-fit px-4">{title}</h1>
+        <div class="flex bg-amber-950/55 border-2 border-amber-50 p-0">
+          <!-- <QuestsPreview /> -->
           <InventoryPreview />
           <CluesPreview />
           <ChoicesMade />
         </div>
-
+        <MusicToggle />
       </div>
-      <MusicToggle />
+
     </div>
   
     <!-- Chapter Content -->
-    <main class="m-auto relative pt-0 z-10 p-8">
+    <main class="m-auto relative pt-0 z-20 p-8">
       <slot />
     </main>
 

@@ -1,12 +1,22 @@
 import { writable } from 'svelte/store';
 import { localStorageStore } from './localStorageStore';
 
+const titles = {
+  'chapter-1': 'The Blacksmith’s Secret',
+  'chapter-2': 'The Oath',
+  'chapter-3': 'Passage Through the Holy Land',
+  'chapter-4': 'Test of the Templar',
+  'chapter-5': 'The Council of Jerusalem',
+  'chapter-6': 'The Trial of Honor',
+  'chapter-7': 'Rise of the Knight',  
+}
 
 type GameState = {
   currentScene: string;
   inventory: string[];
   puzzlesSolved: string[];
   choicesMade: Record<string, string>;
+  titles:  Record<string, string>;
 };
 
 const defaultState: GameState = {
@@ -14,10 +24,13 @@ const defaultState: GameState = {
   inventory: [],
   puzzlesSolved: [],
   choicesMade: {},
+  titles
 };
 
+
+
 import { get } from 'svelte/store';
-import { goto, invalidateAll } from '$app/navigation';
+import { goto } from '$app/navigation';
 
   // Example: move to next scene
   export function advanceChapter(chapter?:string) {
@@ -29,6 +42,7 @@ import { goto, invalidateAll } from '$app/navigation';
     console.log("advanceChapter", {nextChapter, chapter});
   
     setTimeout(()=>{
+      if(!location) goto("/");
       location.replace("/scene/"+nextChapter);
     },1500)
   }
@@ -89,3 +103,6 @@ export const gameStore = localStorageStore<GameState>('gameStore', defaultState)
 
 // Optional: also persist music preference
 export const musicEnabled = localStorageStore<boolean>('musicEnabled', true);
+
+// Optional: also persist music preference
+export const alreadyPlayed = localStorageStore<boolean>('alreadyPlayed', true);

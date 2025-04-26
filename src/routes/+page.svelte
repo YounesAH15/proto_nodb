@@ -2,9 +2,10 @@
 	// import ExplainerVideo from "../lib/components/ExplainerVideo.svelte";
 	import VideoModal from "../lib/components/VideoModal.svelte";
     import myVideo from '$lib/assets/videos/chess_anime_player.mp4';
-	import { newGame } from "$lib/stores/game-store";
+	import { alreadyPlayed, newGame } from "$lib/stores/game-store";
 
-    let explainerIsOpen = true
+    let isOpen = true
+
 </script>
 <section class="m-auto h-screen flex flex-col justify-evenly text-3xl">
 
@@ -39,9 +40,20 @@
      </h1>
 </section> -->
 
+{#if $alreadyPlayed.valueOf()}
+    <!-- Congratulations from Game Master Video  -->
+    <VideoModal 
+        videoSrc={myVideo}
+        open={isOpen}
+        onClose={()=>{isOpen = false}}>
+    </VideoModal>
+{:else}
+    <!-- Explanation from Game Master Video  -->
+    <VideoModal 
+        videoSrc={myVideo}
+        open={isOpen}
+        onClose={()=>{isOpen = false}}>
+    </VideoModal>
+{/if}
 
-<VideoModal 
-    videoSrc={myVideo}
-    open={explainerIsOpen}
-    onClose={()=>{explainerIsOpen = false}}>
-</VideoModal>
+

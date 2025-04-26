@@ -7,14 +7,14 @@ We'll include two choices, both recorded in the choicesMade store. Your choice a
  -->
 
  <script lang="ts">
-    import { advanceChapter, gameStore, makeChoice } from '$lib/stores/game-store';
+    import { addItem, advanceChapter, gameStore, makeChoice } from '$lib/stores/game-store';
   
     let message = '';
     let chosen = false;
   
     function Choose(choice: string) {
       makeChoice("oath",choice)
-
+      addItem("oath-seal")
       message = `You chose: ${choice}`;
       chosen = true;
       advanceChapter("chapter-3");

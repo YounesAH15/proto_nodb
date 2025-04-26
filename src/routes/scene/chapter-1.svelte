@@ -21,9 +21,9 @@
     function checkAnswer() {
       if (answer.trim().toLowerCase() === 'jerusalem') {
         solvePuzzle('blacksmith-scroll');
-        addItem('templar-ring');
+        addItem('templar-scroll');
         advanceChapter("chapter-2");
-        message = 'Correct. You found the Templar’s ring. Chapter 2 unlocked.';
+        message = 'Correct. You found the Templar’s scroll. Chapter 2 unlocked.';
       } else {
         message = 'That’s not quite right…';
         tries--;
@@ -59,7 +59,7 @@
       Here's a Clue 
       <br>
       <h1 class="text-amber-50">
-        {clue.join('_')}
+        {clue.join('')}
       </h1>
     {/if}
 
@@ -75,7 +75,9 @@
       Answer
     </button>
 
-    {#if message}
+    {#if message.includes("Correct")}
+      <p class="mt-4 text-green-500">{message}</p>
+    {:else}
       <p class="mt-4 text-red-500">{message}</p>
     {/if}
   {/if}

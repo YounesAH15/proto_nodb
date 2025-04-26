@@ -1,0 +1,6 @@
+<!-- // File: static/icons/map-fragment.svg -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Map Fragment icon (placeholder) -->
+  <polyline points="12,52 20,16 44,24 52,8" fill="none" stroke="black" stroke-width="2"/>
+  <polyline points="12,44 20,8 44,16 52,0" fill="none" stroke="black" stroke-width="2" opacity="0.3"/>
+</svg>

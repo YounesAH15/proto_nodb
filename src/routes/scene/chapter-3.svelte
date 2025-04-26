@@ -12,7 +12,7 @@
         console.log({solved});
         
         if (solved || selected.length >= 3) return;
-        selected.push(symbol);
+        if(!selected.includes(symbol)) selected.push(symbol);
         selected = selected;
         console.log(selected);
             
@@ -44,7 +44,7 @@
 </p>
 
 <div class="flex justify-center">
-    <!-- <img src="/img/map-holyland.jpg" alt="Holy Land Map" class="mb-4 border rounded w-1/2 justify-center" /> -->
+    <img src="/img/map-holyland.jpg" alt="Holy Land Map" class="mb-4 border rounded w-1/2 justify-center" />
 </div>
   
 <div class="flex gap-4 justify-center">
@@ -86,7 +86,6 @@
 
     {/each}
 </div>
-
 {#if error}
     <p class="text-red-400 mt-4 italic">Incorrect path. Try again.</p>
 {/if}
